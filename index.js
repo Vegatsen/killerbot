@@ -9,7 +9,7 @@ var killFile;
 
 const bot = new Discord.Client()
 bot.login(process.env.token);
-
+bot.channels.get('463025518351089664').send('TEST');
 //Read eventID file to get a list of all posted events
 fs.readFile('./eventID.json', 'utf8', function readFileCallback(err, data){
     if (err){
@@ -42,7 +42,6 @@ function check_Kill(){
 	//I have modified the Albion API here for the getRecentEvents fuction.
 	Albion.getRecentEvents("51", function(rs,cb){
 		//the getRectEvents "51" tells me how many event to look at, can be 1-51.
-		console.log('test');
 		var EventID = "";
 		for (i in cb)
 		{
